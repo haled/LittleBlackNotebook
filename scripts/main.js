@@ -32,17 +32,13 @@ function getListOfNotes(currentNotebook) {
 }
 
 function loadSelectedNote(id) {
-  document.getElementById("note-area").value = notebook.notes[id].text;
-  document.getElementById("btnSave").onclick = function() {
-      var noteText = document.getElementById("note-area").value;
+  $("#note-area").val(notebook.notes[id].text);
+  $("#btnSave").click(function() {
+      var noteText = $("#note-area").val();
       notebook.notes[id].text = noteText;
-  };
+  });
 }
 
-function saveData(id) {
-  var noteText = notebook.notes[id].text = document.getElementById("note-area").value;
-}
-
-document.getElementById("notes-list").innerHTML = getListOfNotes(notebook);
+$("#notes-list").html(getListOfNotes(notebook));
 
 
