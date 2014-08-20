@@ -4,14 +4,15 @@
   <head>
 
   <body>
-    <table border="1">
+    <table border="1" width="800" height="600">
       <tr>
-        <td>
-          <ul id="notes-list">
+        <td valign="top" width="150">
+          <ul id="notes-list" style="list-style-type: none;">
           </ul>
         </td>
-        <td class="note_area">
-          <input type="textarea" value="This is a sample note" />
+        <td width="650" valign="top">
+          <p><input type="button" id="btnSave" value="Save"/></p>
+          <p><textarea id="note-area" rows="40" cols="70" value=""></textarea></p>
         </td>
       </tr>
     </table>
