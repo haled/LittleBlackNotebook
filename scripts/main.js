@@ -2,6 +2,7 @@
 var notebook = {
   title: 'My Notes Thing',
   located: 'Unknown',
+  noteCount: 2,
   notes: [
     {
       id: 0,
@@ -32,15 +33,18 @@ function getListOfNotes(currentNotebook) {
 }
 
 function createNewNote() {
+  var index = notebook.notes.length + 1;
+
   var note = {
-    id: 3,
+    id: index,
     title: "Untitled",
     text: "Type note here.",
     createDateTime: "9/21/2014",
     modifyDateTime: "9/21/2014"
   };
 
-  notebook.notes[notebook.notes.length] = note;
+  notebook.notes.push(note);
+  notebook.noteCount = index;
   alert("length -> " + notebook.notes.length);
   $("#notes-list").html(getListOfNotes(notebook));
 
@@ -49,7 +53,7 @@ function createNewNote() {
 function loadSelectedNote(id) {
   $("#note-title").val(notebook.notes[id].title);
   $("#note-area").val(notebook.notes[id].text);
-  $("#btnSave").click(function() {
+  $("#btnSave").click(function() {                    // ** Fix This!  the functions are appending
       alert("saving index -> " + id);
       var noteText = $("#note-area").val();
       var noteTitle = $("#note-title").val();

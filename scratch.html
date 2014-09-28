@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>Little Black Notebook</title>
+  <head>
+
+  <body>
+    <table border="1">
+      <tr>
+        <td>
+          <ul id="notes-list">
+          </ul>
+        </td>
+        <td class="note_area">
+          <input type="textarea" value="This is a sample note" />
+        </td>
+      </tr>
+    </table>
+
+    <p>
+      <label id="test-field">Starting Text</label>
+    </p>
+  </body>
+
+  <script type="text/javascript" src="lib/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="scripts/main.js"></script>
+  <script type="text/javascript">
+      var startingText = document.getElementById("test-field").innerHTML;
+      alert("First: " + startingText);
+      var data = $( "#notes-list" ).html();
+      alert("Last: " + data);
+  </script>
+
+
+</html>
